@@ -296,17 +296,17 @@ int main(int argc, char *argv[])
 					fprintf(stderr, "got:  %s\n",buf);
                                         if (strncmp(buf, "AT+BRSF=",8)==0) {
 						wlen=write(rd,"+BRSF: 63\r\n",11);
-						fprintf(stderr, "ansewered:  +BRSF: 63\n");
+						fprintf(stderr, "answered:  +BRSF: 63\n");
 					} else if (strncmp(buf, "AT+CIND?",8)==0) { 
 						wlen=write(rd,"+CIND: 0,1,0,0\r\n",16);
-						fprintf(stderr, "ansewered: +CIND: 1\n");
+						fprintf(stderr, "answered: +CIND: 1\n");
 					} else if (strncmp(buf, "AT+CIND=?",9)==0) { 
 						wlen=write(rd,"+CIND: (\"call\",(0,1)),(\"service\",(0,1)),(\"call_setup\",(0-3)),(\"callsetup\",(0-3))\r\n",82);
-						fprintf(stderr, "ansewered: +CIND: (\"call\",(0,1)),(\"service\",(0,1)),(\"call_setup\",(0-3)),(\"callsetup\",(0-3))\n");
+						fprintf(stderr, "answered: +CIND: (\"call\",(0,1)),(\"service\",(0,1)),(\"call_setup\",(0-3)),(\"callsetup\",(0-3))\n");
 					} else {
 						// answer to anything else with an 'OK'
 						wlen = write(rd, "OK\r\n", 4);
-						fprintf(stderr, "ansewered:  OK\n");
+						fprintf(stderr, "answered:  OK\n");
 					}
 				} else {
 					// check return value of read call
